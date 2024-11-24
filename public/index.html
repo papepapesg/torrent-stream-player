@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrent Stream Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Torrent Stream Player</h1>
+        
+        <div class="input-section">
+            <input type="text" id="magnet-input" placeholder="Enter magnet URI or info hash">
+            <button id="load-torrent">Load Torrent</button>
+        </div>
+
+        <div class="progress-section" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="stats">
+                <span id="progress">Progress: 0%</span>
+                <span id="speed">Speed: 0 KB/s</span>
+                <span id="peers">Peers: 0</span>
+            </div>
+        </div>
+
+        <div class="files-section" style="display: none;">
+            <h2>Files</h2>
+            <div id="file-list"></div>
+        </div>
+
+        <div class="player-section" style="display: none;">
+            <video id="video-player" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
